@@ -16,6 +16,8 @@ Are some of the examples
 
 An **API** (Application Programming Interface) is a set of rules that allows one software application to talk to another. It defines how different systems can request and send information to each other.
 
+It focuses on client server approach.
+
 ## Key Points:
 
 - **Interface**: An API acts like a bridge between two systems, making it easier for them to interact.
@@ -27,6 +29,7 @@ An **API** (Application Programming Interface) is a set of rules that allows one
   - **POST**: Send (create) data to the API.
   - **PUT**: Update existing data via the API.
   - **DELETE**: Remove data using the API.
+  - **Update**: Update the data in the API.
   
 - **Data Formats**: APIs commonly exchange data in formats like:
   - **JSON** (JavaScript Object Notation)
@@ -42,6 +45,152 @@ An **API** (Application Programming Interface) is a set of rules that allows one
 
 APIs help different apps or services work together. For example, a weather app might use an API to get data from a weather service.
 
-![My Image]([https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.postman.com%2Fwhat-is-an-api%2F&psig=AOvVaw3bKzg01WNw7-snbFfgj8M6&ust=1725841303564000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCLDS5PWJsogDFQAAAAAdAAAAABAE])
+## Technologies used to build API
+
+- NodeJs
+- Lavarel
+
+## UNDERSTANDING JSON STRUCTURE
+
+-JSON Stands for JavaScript Object Notation
+-It is a lightweight data interchange format
+-Its is primirarly used to send data between computers
+-It is Language Independent
+
+## JSON STRUCTURE
+
+```
+markdown
+# JSON Structure and Syntax
+
+**JSON** (JavaScript Object Notation) is a lightweight data format for exchanging information between a server and a web application. It is easy for humans to read and write, and easy for machines to parse and generate.
+
+## Basic JSON Structure
+JSON represents data using **objects** and **arrays**.
+
+### 1. Objects
+- Defined with curly braces `{}`.
+- Contain key-value pairs where the **key** is always a string, and the **value** can be a string, number, boolean, array, or another object.
+
+Example:
+```json
+{
+  "name": "John Doe",
+  "age": 30,
+  "isStudent": false
+}
+```
+
+## 2. Arrays
+- Defined with square brackets `[]`.
+- Contain a list of values, which can be of any data type: strings, numbers, booleans, objects, or arrays.
+
+Example:
+```
+json
+{
+  "students": ["John", "Jane", "Jim"],
+  "grades": [85, 90, 92]
+}
+```
+
+## JSON Syntax Rules
+
+## 1. Key-Value Pairs
+- Each key-value pair is written as `"key": value`.
+- **Keys** must be strings enclosed in double quotes `""`.
+- **Values** can be:
+  - String: `"John Doe"`
+  - Number: `30`
+  - Boolean: `true` or `false`
+  - Array: `[ ]`
+  - Object: `{ }`
+  - Null: `null`
+
+## 2. Strings
+- Strings must be enclosed in double quotes `""`. Single quotes are **not allowed**.
+  
+Example:
+```
+json
+"name": "John"
+```
+
+## 3. Numbers
+- Numbers are written without quotes.
+  
+Example:
+```
+json
+"age": 25
+```
+
+## 4. Booleans
+- Booleans are written as `true` or `false` (without quotes).
+
+Example:
+```
+json
+"isStudent": true
+```
+
+## 5. Null
+- Null values are represented by `null` (without quotes).
+
+Example:
+```
+json
+"middleName": null
+```
+
+## 6. Commas
+- Key-value pairs inside an object or values inside an array are separated by commas.
+- **No trailing commas** after the last item.
+
+Example:
+```
+json
+{
+  "name": "John",
+  "age": 30
+}
+```
+
+## Example of a Complex JSON Structure
+A JSON structure combining objects and arrays:
+
+```
+json
+{
+  "name": "John Doe",
+  "age": 30,
+  "isStudent": false,
+  "courses": [
+    {
+      "name": "Math",
+      "grade": "A"
+    },
+    {
+      "name": "Science",
+      "grade": "B+"
+    }
+  ],
+  "address": {
+    "street": "123 Main St",
+    "city": "Springfield",
+    "zipCode": "12345"
+  }
+}
+```
+
+## Key Points to Remember
+- JSON is made up of **key-value pairs**.
+- **Objects** `{}` contain key-value pairs.
+- **Arrays** `[]` contain lists of values.
+- Strings must always be enclosed in double quotes.
+- JSON values can be **strings**, **numbers**, **booleans**, **arrays**, **objects**, or **null**.
+
+
+
 
 
