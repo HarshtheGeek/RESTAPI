@@ -190,6 +190,9 @@ json
 - Strings must always be enclosed in double quotes.
 - JSON values can be **strings**, **numbers**, **booleans**, **arrays**, **objects**, or **null**.
 
+## JSON PLACEHOLDER
+JSONPlaceholder is a free, fake online REST API used for testing and prototyping front-end applications. It provides placeholder data in JSON format, allowing developers to quickly test HTTP requests like GET, POST, PUT, DELETE, etc., without needing to set up a real back-end server.
+
 
 
 
