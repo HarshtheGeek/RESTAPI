@@ -193,6 +193,38 @@ json
 ## JSON PLACEHOLDER
 JSONPlaceholder is a free, fake online REST API used for testing and prototyping front-end applications. It provides placeholder data in JSON format, allowing developers to quickly test HTTP requests like GET, POST, PUT, DELETE, etc., without needing to set up a real back-end server.
 
+## Types of Body in Postman
+
+When making `POST`, `PUT`, or `PATCH` requests in Postman, you can send different types of bodies with your requests. Below are the common types of body options available:
+
+## 1. form-data
+- Used to send key-value pairs, where values can be text or files.
+- Often used when submitting forms (e.g., uploading files).
+- Content-Type: `multipart/form-data`.
+
+## 2. x-www-form-urlencoded
+- Sends data as key-value pairs but URL-encoded (encoded as a query string).
+- Commonly used in `POST` requests for submitting HTML forms.
+- Content-Type: `application/x-www-form-urlencoded`.
+
+## 3. raw
+- Used to send arbitrary data such as JSON, XML, plain text, etc.
+- You can specify the format for raw data (e.g., JSON, XML, HTML, plain text).
+- Example content types: `application/json`, `text/xml`.
+
+## 4. binary
+- Used to send binary data, such as files (e.g., images, documents).
+- You select the file you want to upload.
+
+## 5. GraphQL
+- Supports sending GraphQL queries.
+- You define the query and variables directly in the request body.
+
+Each body type is suited for different use cases based on the API's requirements.
+```
+
+
+
 
 
 
