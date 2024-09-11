@@ -221,7 +221,10 @@ When making `POST`, `PUT`, or `PATCH` requests in Postman, you can send differen
 - You define the query and variables directly in the request body.
 
 Each body type is suited for different use cases based on the API's requirements.
-```
+
+## How to integrate API'S
+
+In flutter the API's are integraated using the package called HTTP
 
 
 
