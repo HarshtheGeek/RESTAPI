@@ -227,6 +227,128 @@ Each body type is suited for different use cases based on the API's requirements
 In flutter the API's are integraated using the package called HTTP
 
 
+## Dart API Fetch Example
+
+This repository contains a Dart function to fetch posts from an API using the `http` package. It demonstrates how to make an asynchronous HTTP GET request and convert a URL string into a `Uri` object.
+
+## Function Overview
+
+The function `getPostApi()` sends an HTTP GET request to fetch data from the JSONPlaceholder API. This is an online fake API commonly used for testing and prototyping.
+
+### Function Code:
+
+```dart
+import 'package:http/http.dart' as http;
+import 'dart:convert';
+
+Future<List<PostsModel>> getPostApi() async {
+  final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));
+  
+  if (response.statusCode == 200) {
+    // Parse the JSON response and return the list of PostsModel
+    List jsonResponse = jsonDecode(response.body);
+    return jsonResponse.map((post) => PostsModel.fromJson(post)).toList();
+  } else {
+    throw Exception('Failed to load posts');
+  }
+}
+```
+
+### Explanation:
+
+1. **`Future<List<PostsModel>> getPostApi() async {`**  
+   - This function returns a `Future` that will eventually hold a list of `PostsModel` objects.
+   - The `async` keyword allows for asynchronous operations, enabling the use of `await`.
+
+2. **`final response = await http.get(Uri.parse('https://jsonplaceholder.typicode.com/posts'));`**  
+   - This line sends a GET request to the API.  
+   - `await` pauses the function until the response is received.
+   - `Uri.parse()` converts the string URL into a `Uri` object, which the `http.get()` function requires.
+
+3. **`if (response.statusCode == 200)`**  
+   - This checks if the server responded with a status code of 200, meaning the request was successful.
+
+4. **`jsonDecode(response.body)`**  
+   - The `jsonDecode()` function is used to convert the JSON response body into a Dart list or map.
+
+5. **`return jsonResponse.map((post) => PostsModel.fromJson(post)).toList();`**  
+   - The JSON data is mapped to a list of `PostsModel` objects using the `fromJson` factory method (assumed to be in the `PostsModel` class).
+
+### Required Packages
+
+To run this function, you need to include the `http` package in your `pubspec.yaml` file:
+
+```yaml
+dependencies:
+  http: ^0.13.3
+```
+
+### `Uri.parse()` Explanation:
+
+`Uri.parse()` converts a string URL into a `Uri` object. Dart's HTTP functions (like `http.get()`) require the URL to be a `Uri`, not a plain string.
+
+For example:
+
+```dart
+Uri uri = Uri.parse('https://jsonplaceholder.typicode.com/posts');
+```
+
+This `Uri` object will be used in HTTP requests like this:
+
+```dart
+final response = await http.get(uri);
+```
+
+### Model Class Example
+
+Assuming you have a `PostsModel` class to represent the post data:
+
+```dart
+class PostsModel {
+  final int id;
+  final String title;
+  final String body;
+
+  PostsModel({required this.id, required this.title, required this.body});
+
+  factory PostsModel.fromJson(Map<String, dynamic> json) {
+    return PostsModel(
+      id: json['id'],
+      title: json['title'],
+      body: json['body'],
+    );
+  }
+}
+```
+
+### How to Run
+
+1. Add the `http` package to your `pubspec.yaml`.
+2. Use `getPostApi()` to fetch posts from the JSONPlaceholder API.
+3. Handle the fetched data by converting it into a list of `PostsModel`.
+
+### Sample Response:
+
+The JSONPlaceholder API will return a JSON array of posts. Here's a sample of the response:
+
+```json
+[
+  {
+    "userId": 1,
+    "id": 1,
+    "title": "Sample Title",
+    "body": "Sample Body"
+  },
+  {
+    "userId": 1,
+    "id": 2,
+    "title": "Another Title",
+    "body": "Another Body"
+  }
+]
+```
+
+
 
 
 
