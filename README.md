@@ -416,10 +416,6 @@ dependencies:
 
 Feel free to use and modify this function to suit your needs for fetching and processing data in your Dart applications.
 
----
-
-This Markdown section provides a clear explanation of the code's purpose and functionality, including usage details, dependencies, and notes for further development.
-
 
 
 
