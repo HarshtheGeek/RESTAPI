@@ -506,8 +506,9 @@ class PostList extends StatelessWidget {
   - **Data State:** When the `Future` completes successfully, use the resulting data to build your UI.
 
 `FutureBuilder` is essential for handling asynchronous data in Flutter, making it straightforward to manage REST API responses and update the UI accordingly.
-```
 
+
+## APP creations using REST API
 
 
 
